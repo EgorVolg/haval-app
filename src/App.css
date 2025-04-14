@@ -1,2 +1,42 @@
- 
- 
+.app {
+}
+
+.container {
+  margin: 0 auto;
+}
+
+/* ///////////////////////header/////////////////////// */
+.header {
+  max-width: 1920px;
+  padding-left: 180px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgba(1, 12, 19, 1);
+}
+
+.header__inner {
+}
+
+.vertical-line {
+  width: 2px;
+  height: 68px;
+  background-color: white;
+}
+
+.logo__container {
+  display: flex;
+  align-items: center;
+  max-width: 520px;
+
+  gap: 20px;
+  color: rgba(255, 255, 255, 1);
+}
+
+.logo__text {
+  font-family: Tactic Sans;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 5%;
+  vertical-align: middle;
+}
