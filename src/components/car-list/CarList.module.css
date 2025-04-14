@@ -1,3 +1,7 @@
 .list {
-  gap: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-column-gap: 40px;
+  grid-row-gap: 28px;
 }
