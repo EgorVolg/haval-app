@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Filters.module.css";
 import { Button } from "../../UI/Button";
+import { useDispatch } from "react-redux";
 
 const brands = [
   "Chery",
@@ -31,6 +32,11 @@ const complectations = [
 ];
 
 export const Filters = () => {
+  const dispatch = useDispatch();
+
+  const onSelectBrand = (brand: string) => {
+    dispatch({ type: "cars/getCars", payload: brand });
+  };
 
   return (
     <nav className={styles.filters__group_sidebar}>
@@ -38,10 +44,7 @@ export const Filters = () => {
         <p className={styles.filters__title}>Бренд</p>
         <div className={styles.filter__buttons}>
           {brands.map((brand) => (
-            <div
-              className={styles.filter__item}
-              key={brand}
-            >
+            <div className={styles.filter__item} key={brand} onClick={() => onSelectBrand(brand)}>
               <Button>{brand}</Button>
             </div>
           ))}
