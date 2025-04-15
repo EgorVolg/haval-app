@@ -2,12 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const carsSlice = createSlice({
   name: "cars",
-  initialState: [],
+  initialState: {
+    brand: "Chery",
+  },
   reducers: {
     getCars: (state, action) => {
-      state = action.payload.cars;
-      return state;
+      state.brand = action.payload;
     },
+
     default: () => console.log("error"),
   },
 });

@@ -1,9 +1,9 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { api } from "../api/makeRequest";
-import { getCars } from "./carSlice";
+import { carsSlice } from "./carSlice";
 
 const reducers = combineReducers({
-  cars: getCars,
+  cars: carsSlice.reducer,
   [api.reducerPath]: api.reducer,
 });
 

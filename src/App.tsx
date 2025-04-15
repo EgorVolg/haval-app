@@ -1,9 +1,12 @@
+import { useSelector } from "react-redux";
 import "./App.css";
-import { CarList } from "./components/car-list/CarList"; 
+import { CarList } from "./components/car-list/CarList";
 import { Filters } from "./components/filters/Filters";
 import logo from "./UI/images/logo.svg";
 
 function App() {
+  const brand = useSelector((state: { cars: { brand: string } }) => state.cars.brand);
+
   return (
     <div className="app">
       <header className="header">
@@ -20,7 +23,7 @@ function App() {
 
       <main className="main">
         <div className="container">
-          <p className="main__title">Автомобили Chery в СПб</p>
+          <p className="main__title">Автомобили {brand} в СПб</p>
           <div className="main__inner">
             <Filters />
             <CarList />

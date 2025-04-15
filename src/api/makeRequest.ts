@@ -11,7 +11,7 @@ export const api = createApi({
 
   endpoints: (builder) => ({
     getCarList: builder.query({
-      query: () => "/chery?page=1",
+      query: (brand) => `/${brand}`,
       providesTags: [{ type: "cars" }],
     }),
   }),

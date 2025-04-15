@@ -1,4 +1,4 @@
-import React from "react"; 
+import React from "react";
 import styles from "./Filters.module.css";
 import { Button } from "../../UI/Button";
 
@@ -31,13 +31,17 @@ const complectations = [
 ];
 
 export const Filters = () => {
+
   return (
     <nav className={styles.filters__group_sidebar}>
       <aside className={styles.filter__group}>
         <p className={styles.filters__title}>Бренд</p>
         <div className={styles.filter__buttons}>
           {brands.map((brand) => (
-            <div className={styles.filter__item} key={brand}>
+            <div
+              className={styles.filter__item}
+              key={brand}
+            >
               <Button>{brand}</Button>
             </div>
           ))}

@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./CarList.module.css";
 import { useGetCarListQuery } from "../../api/makeRequest";
 import { CarCard } from "../car-card/CarCard";
+import { useSelector } from "react-redux";
 
 export type CarDetails = {
   _id: string;
@@ -32,14 +33,17 @@ export type CarDetails = {
 };
 
 export const CarList = () => {
-  const { isLoading, data } = useGetCarListQuery({});
+  const brand = useSelector((state: { cars: { brand: string } }) => state.cars.brand);
+  const { isLoading, data } = useGetCarListQuery(brand);
 
   return (
     <div className={styles.list}>
       {isLoading ? (
         <div>Loading...</div>
       ) : (
-        data.map((car: CarDetails, index: number) => <CarCard key={index} car={car} />)
+        data.map((car: CarDetails, index: number) => (
+          <CarCard key={index} car={car} />
+        ))
       )}
     </div>
   );
