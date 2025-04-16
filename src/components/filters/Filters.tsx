@@ -45,22 +45,14 @@ export const Filters = () => {
     dispatch({ type: "car/getCars", payload: brand });
   };
 
-  const onSelectVolume = ({ volume }: { volume: string }) => {
-    dispatch({
-      type: "car/getCarsByVolume",
-      payload: volume,
-    });
-  };
-
-  const onSelectComplectation = ({
+  const onFilter = ({
     complectation,
+    volume,
   }: {
-    complectation: string;
+    complectation?: string;
+    volume?: string;
   }) => {
-    dispatch({
-      type: "car/getCarsByComplectation",
-      payload: complectation,
-    });
+    dispatch({ type: "car/filteredByDetails", payload: { complectation, volume } });
   };
 
   return (
@@ -87,7 +79,7 @@ export const Filters = () => {
             <div
               className={`${volume === car.engineVolume && styles.active} `}
               key={volume}
-              onClick={() => onSelectVolume({ volume })}
+              onClick={() => onFilter({ volume })}
             >
               <Button>{volume}</Button>
             </div>
@@ -104,7 +96,7 @@ export const Filters = () => {
                 complectation === car.complectation && styles.active
               } `}
               key={complectation}
-              onClick={() => onSelectComplectation({ complectation })}
+              onClick={() => onFilter({ complectation })}
             >
               <Button>{complectation}</Button>
             </div>

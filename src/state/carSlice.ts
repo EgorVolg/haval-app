@@ -4,24 +4,27 @@ export const carsSlice = createSlice({
   name: "car",
   initialState: {
     brand: "Chery",
-    engineVolume: "",
-    complectation: "",
+    details: {
+      engineVolume: "",
+      complectation: "",
+    },
   },
   reducers: {
     getCars: (state, action) => {
       state.brand = action.payload;
     },
-    getCarsByVolume: (state, action) => {
-      state.engineVolume = action.payload;
-    },
-    getCarsByComplectation: (state, action) => {
-      state.complectation = action.payload;
+
+    filteredByDetails: (state, action) => {
+      action.payload.volume &&
+        (state.details.engineVolume = action.payload.volume);
+      action.payload.complectation &&
+        (state.details.complectation = action.payload.complectation);
     },
 
     default: () => console.log("error"),
   },
 });
 
-export const { getCars, getCarsByVolume, getCarsByComplectation } = carsSlice.actions;
+export const { getCars, filteredByDetails } = carsSlice.actions;
 
 export default carsSlice.reducer;
