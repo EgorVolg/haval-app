@@ -36,7 +36,10 @@ export const Filters = () => {
 
   const car = useSelector(
     (state: {
-      car: { brand: string; engineVolume: string; complectation: string };
+      car: {
+        brand: string;
+        details: { complectation: string; engineVolume: string };
+      };
     }) => state.car
   );
   console.log(car);
@@ -52,7 +55,10 @@ export const Filters = () => {
     complectation?: string;
     volume?: string;
   }) => {
-    dispatch({ type: "car/filteredByDetails", payload: { complectation, volume } });
+    dispatch({
+      type: "car/filteredByDetails",
+      payload: { complectation, volume },
+    });
   };
 
   return (
@@ -77,7 +83,9 @@ export const Filters = () => {
         <div className={styles.filter__buttons}>
           {engineVolumes.map((volume) => (
             <div
-              className={`${volume === car.engineVolume && styles.active} `}
+              className={`${
+                volume === car.details.engineVolume && styles.active
+              } `}
               key={volume}
               onClick={() => onFilter({ volume })}
             >
@@ -93,7 +101,7 @@ export const Filters = () => {
           {complectations.map((complectation) => (
             <div
               className={`${
-                complectation === car.complectation && styles.active
+                complectation === car.details.complectation && styles.active
               } `}
               key={complectation}
               onClick={() => onFilter({ complectation })}
