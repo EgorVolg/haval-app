@@ -5,7 +5,7 @@ import { Filters } from "./components/filters/Filters";
 import logo from "./UI/images/logo.svg";
 
 function App() {
-  const brand = useSelector((state: { cars: { brand: string } }) => state.cars.brand);
+  const brand = useSelector((state: { car: { brand: string } }) => state.car.brand);
 
   return (
     <div className="app">

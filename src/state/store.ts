@@ -3,7 +3,7 @@ import { api } from "../api/makeRequest";
 import { carsSlice } from "./carSlice";
 
 const reducers = combineReducers({
-  cars: carsSlice.reducer,
+  car: carsSlice.reducer,
   [api.reducerPath]: api.reducer,
 });
 

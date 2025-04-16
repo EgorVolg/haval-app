@@ -33,7 +33,7 @@ export type CarDetails = {
 };
 
 export const CarList = () => {
-  const brand = useSelector((state: { cars: { brand: string } }) => state.cars.brand);
+  const brand = useSelector((state: { car: { brand: string } }) => state.car.brand);
   const { isLoading, data } = useGetCarListQuery(brand);
 
   return (

@@ -23,6 +23,11 @@
   flex-wrap: wrap;
   gap: 10px;
 }
+.active {
+  button {
+    background-color: #A9A9A9;
+  }
+}
 
 .filter__reset {
   padding: 40px 0;
