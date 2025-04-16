@@ -33,20 +33,7 @@ const complectations = [
 
 export const Filters = () => {
   const dispatch = useDispatch();
-  const selectedBrand = useSelector(
-    (state: { car: { brand: string } }) => state.car.brand
-  );
 
-  const selectedVolume = useSelector(
-    (state: {
-      car: { brand: string; engineVolume: string; complectation: string };
-    }) => state.car.engineVolume
-  );
-  const selectedComplectation = useSelector(
-    (state: {
-      car: { brand: string; engineVolume: string; complectation: string };
-    }) => state.car.complectation
-  );
   const car = useSelector(
     (state: {
       car: { brand: string; engineVolume: string; complectation: string };
@@ -83,7 +70,7 @@ export const Filters = () => {
         <div className={styles.filter__buttons}>
           {brands.map((brand) => (
             <div
-              className={`${brand === selectedBrand && styles.active} `}
+              className={`${brand === car.brand && styles.active} `}
               key={brand}
               onClick={() => onSelectBrand({ brand })}
             >
@@ -98,7 +85,7 @@ export const Filters = () => {
         <div className={styles.filter__buttons}>
           {engineVolumes.map((volume) => (
             <div
-              className={`${volume === selectedVolume && styles.active} `}
+              className={`${volume === car.engineVolume && styles.active} `}
               key={volume}
               onClick={() => onSelectVolume({ volume })}
             >
@@ -114,7 +101,7 @@ export const Filters = () => {
           {complectations.map((complectation) => (
             <div
               className={`${
-                complectation === selectedComplectation && styles.active
+                complectation === car.complectation && styles.active
               } `}
               key={complectation}
               onClick={() => onSelectComplectation({ complectation })}
