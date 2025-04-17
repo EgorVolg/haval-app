@@ -33,15 +33,35 @@ export type CarDetails = {
 };
 
 export const CarList = () => {
-  const brand = useSelector((state: { car: { brand: string } }) => state.car.brand);
-  const { isLoading, data } = useGetCarListQuery(brand);
+  const filterParams = useSelector(
+    (state: {
+      car: {
+        brand: string;
+        details: { complectation: string; engineVolume: string };
+      };
+    }) => state.car
+  );
+
+  const { isLoading, data } = useGetCarListQuery(filterParams.brand);
+
+  const cars = data
+    ?.filter(
+      (car: CarDetails) =>
+        !filterParams.details.complectation ||
+        car.Complectation === filterParams.details.complectation
+    )
+    .filter(
+      (car: CarDetails) =>
+        !filterParams.details.engineVolume ||
+        car.EngineSize === Number(filterParams.details.engineVolume)
+    );
 
   return (
     <div className={styles.list}>
       {isLoading ? (
         <div>Loading...</div>
       ) : (
-        data.map((car: CarDetails, index: number) => (
+        cars.map((car: CarDetails, index: number) => (
           <CarCard key={index} car={car} />
         ))
       )}

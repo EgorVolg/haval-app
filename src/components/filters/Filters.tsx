@@ -41,9 +41,8 @@ export const Filters = () => {
         details: { complectation: string; engineVolume: string };
       };
     }) => state.car
-  );
-  console.log(car);
-
+  ); 
+  
   const onSelectBrand = ({ brand }: { brand: string }) => {
     dispatch({ type: "car/getCars", payload: brand });
   };
