@@ -54,6 +54,7 @@ export const Filters = () => {
     complectation?: string;
     volume?: string;
   }) => {
+   
     dispatch({
       type: "car/filteredByDetails",
       payload: { complectation, volume },
@@ -111,7 +112,7 @@ export const Filters = () => {
         </div>
       </aside>
 
-      <div className={styles.filter__reset}>
+      <div className={styles.filter__reset} onClick={() => dispatch({ type: "car/reset" })}>
         <Button>Сбросить фильтр</Button>
       </div>
     </nav>

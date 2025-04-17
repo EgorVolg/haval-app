@@ -21,6 +21,11 @@ export const carsSlice = createSlice({
         (state.details.complectation = action.payload.complectation);
     },
 
+    reset: (state, action) => { 
+      state.details.engineVolume = "";
+      state.details.complectation = "";
+    },
+
     default: () => console.log("error"),
   },
 });
