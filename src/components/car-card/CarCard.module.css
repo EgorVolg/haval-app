@@ -1,25 +1,27 @@
 .card {
   max-width: 440px;
+  min-width: 300px;
   max-height: 561px;
-  padding: 14px 0;
+  text-wrap: nowrap;
 }
 
 .car__img {
-  height: 292px;
+  width: 100%;
 }
 
 .car__info {
-  height: 141px;
+  padding: 20px 0 28px 0;
 }
 
-.car__title { 
+.car__title {
   font-family: Tactic Sans;
   font-weight: 400;
   font-size: 32px;
   line-height: 140%;
   letter-spacing: 3%;
   vertical-align: middle;
-  color: rgba(1, 12, 19, 1);
+
+  color: #010c13;
 }
 
 .car__description {
@@ -29,6 +31,7 @@
   line-height: 140%;
   letter-spacing: 2%;
   vertical-align: middle;
+
   color: rgba(154, 167, 173, 1);
 }
 
@@ -44,6 +47,7 @@
   font-size: 28px;
   line-height: 120%;
   letter-spacing: 4%;
+
   text-align: center;
   vertical-align: middle;
   color: rgba(255, 255, 255, 1);

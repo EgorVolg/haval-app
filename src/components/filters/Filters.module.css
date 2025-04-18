@@ -1,18 +1,20 @@
 .filters__group_sidebar {
+  display: flex;
+  flex-direction: column; 
   max-height: 837px;
   max-width: 500px;
 }
 
 .filter__group {
+  width: 100%;
   padding-bottom: 30px;
-
   border-bottom: 2px solid rgba(154, 167, 173, 1);
 }
 
 .filters__title {
   font-family: Tactic Sans;
   font-weight: 400;
-  font-size: 28px;
+  font-size: clamp(20px, 4vw, 28px);
   line-height: 140%;
   letter-spacing: 2%;
   vertical-align: middle;
@@ -21,6 +23,7 @@
 .filter__buttons {
   display: flex;
   flex-wrap: wrap;
+  font-size: clamp(14px, 2.5vw, 18px);
   gap: 10px;
 }
 .active {
@@ -34,7 +37,7 @@
 }
 
 .filter__reset button {
-  width: 500px;
+  width: 100%;
   height: 80px;
 
   border-radius: 8px;

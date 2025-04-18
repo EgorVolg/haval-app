@@ -10,14 +10,12 @@ function App() {
   return (
     <div className="app">
       <header className="header">
-        <div className="container">
-          <div className="header__inner">
+        <div className="container"> 
             <a href="#" className="logo__container">
               <img src={logo} alt="logo" />
               <div className="vertical-line"></div>
               <span className="logo__text">Официальный дилер Максимум</span>
             </a>
-          </div>
         </div>
       </header>
 

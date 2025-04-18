@@ -11,6 +11,7 @@ export const CarCard = ({ car }: { car: any }) => {
 
   return (
     <div className={styles.card}>
+      
       <img
         className={styles.car__img}
         src={car.photos.imgs[0].url}
