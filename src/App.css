@@ -1,14 +1,12 @@
-.container { 
+.container {
   margin: 0 auto;
-  padding: 0 9.85%;
+  padding: 0 9.85%; 
 }
 
 /* ///////////////////////// Header ///////////////////////// */
 .header {
   width: 100%;
-
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px 0;
   background-color: rgba(1, 12, 19, 1);
 }
 
@@ -24,7 +22,7 @@
   max-width: 520px;
 
   gap: 20px;
-  color: rgba(255, 255, 255, 1); 
+  color: rgba(255, 255, 255, 1);
 }
 
 .logo__text {
@@ -58,12 +56,39 @@
 }
 
 @media (max-width: 1440px) {
-  .main__inner { 
+  .main__inner {
     grid-column-gap: 30px;
   }
 }
 
-@media (max-width: 1024px) {
-  .main__inner {  
+@media (max-width: 320px) {
+  .header {
+    padding: 12px 12.5px;
+  }
+
+  .header .container {
+    padding: 0;
+  }
+
+  .logo__container {
+    width: 100%;
+  }
+
+  .main .container {
+    padding: 0 20px;
+  }
+
+  .main__title { 
+
+    font-family: Tactic Sans;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 3%;
+    vertical-align: middle;
+  }
+
+  .main__inner {
+    grid-template-columns: 1fr;
   }
 }

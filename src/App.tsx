@@ -24,7 +24,7 @@ function App() {
           <p className="main__title">Автомобили {brand} в СПб</p>
           <div className="main__inner">
             <Filters />
-            <CarList />
+            {/* <CarList /> */}
           </div>
         </div>
       </main>

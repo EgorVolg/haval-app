@@ -41,8 +41,8 @@ export const Filters = () => {
         details: { complectation: string; engineVolume: string };
       };
     }) => state.car
-  ); 
-  
+  );
+
   const onSelectBrand = ({ brand }: { brand: string }) => {
     dispatch({ type: "car/getCars", payload: brand });
   };
@@ -54,7 +54,6 @@ export const Filters = () => {
     complectation?: string;
     volume?: string;
   }) => {
-   
     dispatch({
       type: "car/filteredByDetails",
       payload: { complectation, volume },
@@ -68,7 +67,9 @@ export const Filters = () => {
         <div className={styles.filter__buttons}>
           {brands.map((brand) => (
             <div
-              className={`${brand === car.brand && styles.active} `}
+              className={`${styles.filter__button} ${
+                brand === car.brand ? styles.active : ""
+              }`}
               key={brand}
               onClick={() => onSelectBrand({ brand })}
             >
@@ -112,7 +113,10 @@ export const Filters = () => {
         </div>
       </aside>
 
-      <div className={styles.filter__reset} onClick={() => dispatch({ type: "car/reset" })}>
+      <div
+        className={styles.filter__reset}
+        onClick={() => dispatch({ type: "car/reset" })}
+      >
         <Button>Сбросить фильтр</Button>
       </div>
     </nav>
