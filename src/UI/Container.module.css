@@ -1,0 +1,18 @@
+.main__container {
+  padding: 100px 219px;
+}
+
+.header__container {
+  padding: 0 219px;
+  background-color: #010c13;
+}
+
+@media (max-width: 1440px) {
+  .header__container {
+    padding: 0 100px;
+  }
+
+  .main__container {
+    padding: 50px 100px;
+  }
+}

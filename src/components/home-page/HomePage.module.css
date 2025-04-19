@@ -1,0 +1,33 @@
+/* ////////////////////////////////////// MAIN ///////////////////////////////////////////////////// */
+
+.main__title {
+  display: flex;
+  width: 100%;
+  height: 56px;
+  font-family: Tactic Sans;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 140%;
+  letter-spacing: 3%;
+  vertical-align: middle;
+
+  margin-bottom: 60px;
+}
+
+.main__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.78fr;
+  grid-column-gap: 60px;
+}
+
+@media (max-width: 1440px) {
+  .main__inner {
+    grid-column-gap: 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main__inner {
+    grid-column-gap: 60px;
+  }
+}

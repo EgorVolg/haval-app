@@ -1,9 +1,14 @@
 import React from "react";
-import styles from "./CarPage.module.css"
-import { useParams } from "react-router-dom";
+import styles from "./CarPage.module.css";
+import { Header } from "../header/Header";
+import { Container } from "../../UI/Container";
 
 export const CarPage = () => {
-    const { code } = useParams<{ code: string }>();
-
-    return <div>hello world</div>
-}
+  return (
+    <>
+      <Container containerType="header__container">
+        <Header />
+      </Container>
+    </>
+  );
+};

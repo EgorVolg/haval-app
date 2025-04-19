@@ -1,8 +1,7 @@
 button {
   border: 2px solid rgba(1, 12, 19, 1);
   border-radius: 8px;
-  
-  
+
   padding: 8px 20px;
 
   font-family: Tactic Sans;
@@ -15,7 +14,7 @@ button {
 
   background: rgba(255, 255, 255, 1);
   color: rgba(1, 12, 19, 1);
-  
+
   &:hover {
     cursor: pointer;
     background-color: rgba(169, 169, 169, 1);

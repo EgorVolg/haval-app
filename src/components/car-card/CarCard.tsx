@@ -6,7 +6,7 @@ export const CarCard = ({ car }: { car: any }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/car/1`);
+    navigate(`/car/${car.car_id}`);
   };
 
   return (
