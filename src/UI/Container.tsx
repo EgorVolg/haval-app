@@ -3,7 +3,7 @@ import styles from "./Container.module.css";
 
 type ContainerProps = {
   children: React.ReactNode;
-  containerType: string;
+  containerType: "header" | "body";
 };
 
 export const Container = ({ children, containerType }: ContainerProps) => {

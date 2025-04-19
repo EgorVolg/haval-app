@@ -6,7 +6,7 @@ import { Container } from "../../UI/Container";
 export const CarPage = () => {
   return (
     <>
-      <Container containerType="header__container">
+      <Container containerType="header">
         <Header />
       </Container>
     </>
