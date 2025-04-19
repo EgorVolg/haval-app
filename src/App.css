@@ -56,3 +56,14 @@
 
   max-width: 1482px;
 }
+
+@media (max-width: 1440px) {
+  .main__inner { 
+    grid-column-gap: 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main__inner {  
+  }
+}
