@@ -1,31 +1,33 @@
 .filters__group_sidebar {
   display: flex;
   flex-direction: column;
-  max-height: 837px;
   max-width: 500px;
+  min-width: 300px;
+  height: 837px;
 }
 
 .filter__group {
-  width: 100%;
-  padding-bottom: 30px;
+  padding: 30px 0;
   border-bottom: 2px solid rgba(154, 167, 173, 1);
 }
 
 .filters__title {
   font-family: Tactic Sans;
   font-weight: 400;
-  font-size: clamp(20px, 4vw, 28px);
+  font-size: 28px;
   line-height: 140%;
   letter-spacing: 2%;
   vertical-align: middle;
+
+  padding-bottom: 40px;
 }
 
 .filter__buttons {
   display: flex;
   flex-wrap: wrap;
-  font-size: clamp(14px, 2.5vw, 18px);
   gap: 10px;
 }
+
 .active {
   button {
     background-color: #a9a9a9;
@@ -33,15 +35,15 @@
 }
 
 .filter__reset {
+  width: 100%;
+  height: 160px;
+
   padding: 40px 0;
 }
 
 .filter__reset button {
   width: 100%;
   height: 80px;
-
-  border-radius: 8px;
-  border-width: 2px;
 
   font-family: Tactic Sans;
   font-weight: 400;
@@ -52,33 +54,32 @@
   vertical-align: middle;
 }
 
-@media (max-width: 320px) {
-  .filter__group {
-    width: 100%;
-    border-bottom: none; 
+@media (max-width: 1440px) {
+  .filters__group_sidebar {
+    min-width: 170px;
   }
+}
 
-  .filter__group:not(:first-of-type) {
-    display: none;
+@media (max-width: 1024px) {
+  .filters__group_sidebar {
+    min-width: 150px;
   }
 
   .filters__title {
-    display: none;
-  }
-
-  .filter__reset {
-    display: none;
-  }
-
-  .filter__buttons { 
-    display: flex;
-    flex-wrap: nowrap; 
-    width: 300px; 
-    overflow-x: auto;
-    scroll-snap-type: mandatory;
-  }
-
-  .filter__button {
-    scroll-snap-align: start;
+    padding-bottom: 20px;
+    font-size: 20px;
+    text-wrap: nowrap;
   }
 }
+
+/* .filter__buttons { 
+  display: flex;
+  flex-wrap: nowrap; 
+  width: 300px; 
+  overflow-x: auto;
+  scroll-snap-type: mandatory;
+}
+
+.filter__button {
+  scroll-snap-align: start;
+} */

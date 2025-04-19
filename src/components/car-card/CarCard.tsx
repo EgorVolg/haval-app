@@ -11,18 +11,18 @@ export const CarCard = ({ car }: { car: any }) => {
 
   return (
     <div className={styles.card}>
-      
       <img
         className={styles.car__img}
         src={car.photos.imgs[0].url}
         alt="car"
       />
       <div className={styles.car__info}>
-        <p className={styles.car__title}>{car.modelName}</p>
+        <p className={styles.car__title}>{car.brandName} {car.modelName}</p>
         <div className={styles.car__description}>
           {car.EngineSize} / {car.Power} Л.С. / {car.Transmission}
         </div>
       </div>
+      
       <button className={styles.card__btn} onClick={handleClick}>
         Подробнее
       </button>

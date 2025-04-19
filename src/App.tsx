@@ -5,29 +5,31 @@ import { Filters } from "./components/filters/Filters";
 import logo from "./UI/images/logo.svg";
 
 function App() {
-  const brand = useSelector((state: { car: { brand: string } }) => state.car.brand);
+  const brand = useSelector(
+    (state: { car: { brand: string } }) => state.car.brand
+  );
 
   return (
     <div className="app">
-      <header className="header">
-        <div className="container"> 
-            <a href="#" className="logo__container">
-              <img src={logo} alt="logo" />
-              <div className="vertical-line"></div>
-              <span className="logo__text">Официальный дилер Максимум</span>
-            </a>
-        </div>
-      </header>
+      <div className="container header__container">
+        <header className="header">
+          <a href="#" className="logo__container">
+            <img src={logo} alt="logo" className="logo__img" />
+            <div className="vertical-line"></div>
+            <span className="logo__text">Официальный дилер Максимум</span>
+          </a>
+        </header>
+      </div>
 
-      <main className="main">
-        <div className="container">
+      <div className="container main__container">
+        <main className="main">
           <p className="main__title">Автомобили {brand} в СПб</p>
           <div className="main__inner">
             <Filters />
-            {/* <CarList /> */}
+            <CarList />
           </div>
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
   );
 }
