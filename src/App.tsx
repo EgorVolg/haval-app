@@ -2,8 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CarPage } from "./components/car-page/CarPage";
 import { HomePage } from "./components/home-page/HomePage";
 import { Container } from "./UI/Container";
-import { Header } from "./components/header/Header";
-import { TitleBlock } from "./UI/TitleBlock";
+import { Header } from "./components/header/Header"; 
 
 function App() {
   return (

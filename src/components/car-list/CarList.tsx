@@ -58,6 +58,7 @@ export const CarList = () => {
 
   return (
     <div className={styles.list}> 
+    
       {isLoading ? (
         <div>Loading...</div>
       ) : (
