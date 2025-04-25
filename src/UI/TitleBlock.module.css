@@ -1,20 +1,24 @@
 .title__block {
-  display: flexbox;
+  display: flex;
   width: 678px;
-  height: 100px;
-  gap: 20px; 
+
+  padding-bottom: 120px;
 }
 
-.main__title {
+.title {
   display: flex;
+
   width: 100%;
   height: 56px;
+
   font-family: Tactic Sans;
   font-weight: 400;
   font-size: 40px;
   line-height: 140%;
   letter-spacing: 3%;
   vertical-align: middle;
+
+  padding: 0;
 }
 
 .vin {
@@ -27,4 +31,10 @@
   text-transform: uppercase;
 
   color: #9aa7ad;
+}
+
+@media (max-width: 1440px) {
+  .title__block {
+    padding-bottom: 60px;
+  }
 }
