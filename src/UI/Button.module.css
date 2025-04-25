@@ -7,13 +7,13 @@ button {
 
   padding: 8px 20px;
 
-  font-family: Tactic Sans;
+  font-family: "Tactic Sans";
   font-weight: 400;
   font-size: clamp(8px, 1.2vw, 16px);
   line-height: 150%;
   letter-spacing: 5%;
   text-align: center;
-  vertical-align: middle;
+  vertical-align: normal;
 
   background: rgba(255, 255, 255, 1);
   color: rgba(1, 12, 19, 1);
@@ -36,16 +36,8 @@ button {
     height: 20px;
     border: 1px solid #010c13;
     border-radius: 4px;
-    font-size: 12px;
-    padding: 4px 10px;
-
-    font-family: Tactic Sans;
-    font-weight: 400;
     font-size: 8px;
-    line-height: 150%;
-    letter-spacing: 5%;
-    text-align: center;
-    vertical-align: middle; 
+    padding: 4px 10px;
   }
 }
 
@@ -57,13 +49,5 @@ button {
     border-radius: 4px;
     font-size: 8px;
     padding: 4px 10px;
-
-    font-family: Tactic Sans;
-    font-weight: 400;
-    font-size: 8px;
-    line-height: 150%;
-    letter-spacing: 5%;
-    text-align: center;
-    vertical-align: middle;    
   }
 }

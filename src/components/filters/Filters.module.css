@@ -9,15 +9,19 @@
 .filter__group {
   padding: 30px 0;
 
+  &:first-child {
+    padding-top: 0;
+  }
+
   &:not(:last-child) {
     border-bottom: 2px solid rgba(154, 167, 173, 1);
   }
 }
 
 .filters__title {
-  font-family: Tactic Sans;
-  font-weight: 400;
-  font-size: 28px;
+  font-family: "Tactic Sans";
+  font-weight: 700;
+  font-size: clamp(12px, 3.2vw, 24px);
   line-height: 140%;
   letter-spacing: 2%;
   vertical-align: middle;
@@ -47,10 +51,10 @@
 .filter__reset button {
   width: 100%;
   height: 80px;
-
-  font-family: Tactic Sans;
-  font-weight: 400;
-  font-size: 28px;
+  text-wrap: nowrap;
+  font-family: "Tactic Sans";
+  font-weight: 700;
+  font-size: clamp(12px, 3.2vw, 24px);
   line-height: 120%;
   letter-spacing: 4%;
   text-align: center;
@@ -76,9 +80,28 @@
 }
 
 @media (max-width: 768px) {
-.filter__buttons {
-  gap: 4px;
-}
+  .filters__group_sidebar {
+    min-width: 100px;
+  }
+
+  .filters__title {
+    font-size: 14px;
+    padding-bottom: 10px;
+  }
+
+  .filter__buttons {
+    gap: 4px; 
+  }
+
+  .filter__reset {
+    height: auto;
+    padding: 0;
+
+    button {
+      height: 40px;
+      font-size: 10px;
+    }
+  }
 
   .filter__group {
     padding: 30px 0;
@@ -94,29 +117,24 @@
 
   .filter__buttons {
     display: flex;
-    flex-wrap: nowrap; 
-
+    flex-wrap: nowrap;
+    width: 300px;
     overflow-x: auto;
     scroll-snap-type: mandatory;
-    width: 300px;
   }
 
-  .filter__group {padding: 0%;
+  .filter__group {
+    padding: 0%;
     &:not(:first-child) {
       display: none;
-     
     }
 
     &:first-child {
       .filters__title {
-        display: none; 
+        display: none;
       }
 
       border-bottom: none;
     }
   }
-
-   
-
-   
 }

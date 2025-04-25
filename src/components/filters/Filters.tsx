@@ -112,7 +112,7 @@ export const Filters = () => {
           ))}
         </div>
       </aside>
-      
+
       <aside className={styles.filter__group}>
         <div
           className={styles.filter__reset}
