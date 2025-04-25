@@ -30,11 +30,7 @@
   }
 }
 
-@media (max-width: 768px) {
-  .main__inner {
-    grid-template-columns: 1fr;
-  }
-
+@media (max-width: 768px) { 
   .main__title {
     font-family: Tactic Sans;
     font-weight: 400;
@@ -44,5 +40,11 @@
     vertical-align: middle;
 
     margin: 0; 
+  }
+}
+
+@media (max-width: 320px) {
+  .main__inner {
+    grid-template-columns: 1fr;
   }
 }

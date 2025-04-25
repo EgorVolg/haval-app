@@ -1,7 +1,7 @@
 button {
   width: auto;
   height: 40px;
-  
+
   border: 2px solid rgba(1, 12, 19, 1);
   border-radius: 8px;
 
@@ -30,12 +30,40 @@ button {
   }
 }
 
+@media (max-width: 768px) {
+  button {
+    width: auto;
+    height: 20px;
+    border: 1px solid #010c13;
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 4px 10px;
+
+    font-family: Tactic Sans;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 150%;
+    letter-spacing: 5%;
+    text-align: center;
+    vertical-align: middle; 
+  }
+}
+
 @media (max-width: 320px) {
   button {
+    width: auto;
     height: 20px;
-    border: 1px solid #010C13;
+    border: 1px solid #010c13;
     border-radius: 4px;
     font-size: 8px;
     padding: 4px 10px;
+
+    font-family: Tactic Sans;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 150%;
+    letter-spacing: 5%;
+    text-align: center;
+    vertical-align: middle;    
   }
 }
