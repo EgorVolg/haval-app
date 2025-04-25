@@ -1,4 +1,7 @@
 button {
+  width: auto;
+  height: 40px;
+  
   border: 2px solid rgba(1, 12, 19, 1);
   border-radius: 8px;
 
@@ -6,7 +9,7 @@ button {
 
   font-family: Tactic Sans;
   font-weight: 400;
-  font-size: 16px;
+  font-size: clamp(8px, 1.2vw, 16px);
   line-height: 150%;
   letter-spacing: 5%;
   text-align: center;
@@ -24,5 +27,15 @@ button {
 @media (max-width: 1024px) {
   button {
     font-size: 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  button {
+    height: 20px;
+    border: 1px solid #010C13;
+    border-radius: 4px;
+    font-size: 8px;
+    padding: 4px 10px;
   }
 }

@@ -16,9 +16,6 @@ export const CarPage = () => {
   const { data } = useGetCarListQuery(brand);
   const car = data?.find((car: CarDetails) => car.car_id === carId);
 
-  console.log(car);
-  
-
   return (
     <>
       <Container containerType="body">

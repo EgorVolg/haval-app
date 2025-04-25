@@ -1,5 +1,3 @@
-/* ////////////////////////////////////// MAIN ///////////////////////////////////////////////////// */
-
 .main__title {
   display: flex;
   width: 100%;
@@ -28,6 +26,23 @@
 
 @media (max-width: 1024px) {
   .main__inner {
-    grid-column-gap: 60px;
+    grid-column-gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .main__title {
+    font-family: Tactic Sans;
+    font-weight: 400;
+    font-size: clamp(20px, 4vw, 40px);
+    line-height: 140%;
+    letter-spacing: 3%;
+    vertical-align: middle;
+
+    margin: 0; 
   }
 }

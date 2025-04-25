@@ -112,13 +112,15 @@ export const Filters = () => {
           ))}
         </div>
       </aside>
-
-      <div
-        className={styles.filter__reset}
-        onClick={() => dispatch({ type: "car/reset" })}
-      >
-        <Button>Сбросить фильтр</Button>
-      </div>
+      
+      <aside className={styles.filter__group}>
+        <div
+          className={styles.filter__reset}
+          onClick={() => dispatch({ type: "car/reset" })}
+        >
+          <Button>Сбросить фильтр</Button>
+        </div>
+      </aside>
     </nav>
   );
 };

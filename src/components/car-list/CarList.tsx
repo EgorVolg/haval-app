@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./CarList.module.css";
 import { useGetCarListQuery } from "../../api/makeRequest";
 import { CarCard } from "../car-card/CarCard";
-import { useSelector } from "react-redux";
+import { useSelector } from "react-redux"; 
 
 export type CarDetails = {
   _id: string;
@@ -57,8 +57,7 @@ export const CarList = () => {
     );
 
   return (
-    <div className={styles.list}> 
-    
+    <div className={styles.list}>
       {isLoading ? (
         <div>Loading...</div>
       ) : (
