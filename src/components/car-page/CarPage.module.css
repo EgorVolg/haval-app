@@ -4,67 +4,164 @@
 
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 29px;
 
   color: #010c13;
 }
 
 .sale__block {
+  display: flexbox;
+  width: 626px;
+  height: 184px;
+  margin-bottom: 60px;
 }
 
 .price {
-  font-family: Tactic Sans;
+  display: flex;
+  font-family: "Tactic Sans";
   font-weight: 400;
   font-size: 32px;
   line-height: 130%;
   letter-spacing: 5%;
   vertical-align: middle;
+
   color: #ca0100;
+  background: #f4f7f8;
+  padding: 20px 40px;
+  margin-bottom: 20px;
+  border-radius: 12px;
 }
 
 .guarantee {
+  font-family: Tactic Sans;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 140%;
+  letter-spacing: 2%;
+  gap: 20px;
+
+  display: flex;
+  background: #f4f7f8;
+  border-radius: 12px;
+  padding: 20px 40px;
 }
 
 .car__description {
 }
 
 .car__img__block {
+  width: 881px;
+  height: 763px;
+  gap: 40px;
+
+  border-bottom: 1px solid red;
 }
 
 .car__img__block img {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  border-radius: 16px;
 }
 
 .block_title {
+  font-family: "Tactic Sans";
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 140%;
+  letter-spacing: 3%;
+  vertical-align: middle;
+
+  margin-bottom: 30px;
 }
 
 .about__block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  width: 626px;
+  height: 430px;
+  padding: 60px;
+  border-radius: 16px;
+
+  background: #f4f7f8;
+  border-radius: 16px;
+  padding: 60px;
 }
 
 .characteristics {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  font-family: "Tactic Sans";
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 140%;
+  letter-spacing: 2%;
+  vertical-align: middle;
 }
 
 .footer {
-  height: 836px;
+  height: 899px;
   background: linear-gradient(102.95deg, #00a8cd 62.03%, #047dbf 110.97%);
 }
 
-.footer__block {
+.footer__block { 
+  display: flex;
 }
 
-.footer__img {
+.footer__img_block {
+ position: absolute;
+  right: 0;
 }
 
 .footer__text_block {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  position: relative; 
+  top: 152px;
+  left: 219px; 
+  
+  border-radius: 8px;
+
+  width: 709px;
+  height: 412px; 
+
+  z-index: 1;
 }
 
 .footer__text_title {
+  font-family: "Tactic Sans";
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 140%;
+  letter-spacing: 3%;
+  vertical-align: middle;
+
+  color: #fff;
 }
 
 .footer__text_description {
+  color: #fff;
+  font-family: "Tactic Sans";
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 140%;
+  letter-spacing: 2%;
+  vertical-align: middle;
 }
 
 .footer__btn {
+  width: 440px;
+  height: 80px;
+
+  background-color: #ca0100;
+  border-radius: 8px;
+
+  color: #fff;
+
   font-family: Tactic Sans;
   font-weight: 400;
   font-size: 28px;
@@ -72,9 +169,4 @@
   letter-spacing: 4%;
   text-align: center;
   vertical-align: middle;
-  width: 440px;
-  height: 80px;
-  border-radius: 8px;
-  background-color: #ca0100;
-  color: #fff;
 }

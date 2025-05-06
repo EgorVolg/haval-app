@@ -15,11 +15,12 @@ function App() {
 
         <Container containerType="body">
           <TitleBlock />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/car/:code" element={<CarPage />} />
-          </Routes> 
         </Container>
+
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/car/:code" element={<CarPage />} />
+        </Routes>
       </BrowserRouter>
     </>
   );
