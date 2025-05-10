@@ -22,59 +22,70 @@ export const CarPage = () => {
   return (
     <>
       {isLoading ? (
-        <div>Loading...</div>
+        <Container containerType="body">Loading...</Container>
       ) : (
         <>
-          <Container containerType="body">
-            <div className={styles.main}>
-              <div className={styles.description__block}>
-                <div className={styles.sale__block}>
-                  <div className={styles.price}>1 890 000</div>
-                  <div className={styles.guarantee}>
-                    <img src={label} alt="" />
-                    Гарантия юр. чистоты.
-                  </div>
+          <div className={styles.main}>
+            <div className={styles.description__block}>
+              <div className={styles.sale__block}>
+                <div className={styles.price}>
+                  {car.price.toLocaleString("ru-RU")} ₽
                 </div>
-
-                <div className={styles.car__description}>
-                  <div className={styles.block_title}>Характеристики</div>
-                  <div className={styles.about__block}>
-                    <div className={styles.characteristics}>
-                      <img src={year} alt="" />
-                      <p>2020 год выпуска</p>
-                    </div>
-                    <div className={styles.characteristics}>
-                      <img src={engine} alt="" />
-                      <p>1,5 л / 147 л.с / Бензин</p>
-                    </div>
-                    <div className={styles.characteristics}>
-                      <img src={transmission} alt="" />
-                      <p>КП - Вариатор</p>
-                    </div>
-                  </div>
+                <div className={styles.guarantee}>
+                  <img src={label} alt="" />
+                  Гарантия юр. чистоты.
                 </div>
               </div>
 
-              <div className={styles.car__img__block}>
-                <img src={car.photos.imgs[0].url} alt="" />
+              <div className={styles.car__description}>
+                <div className={styles.block__title}>Характеристики</div>
+                <div className={styles.about__block}>
+                  <div className={styles.characteristics}>
+                    <img src={year} alt="" />
+                    <p>{car.Year} год выпуска</p>
+                  </div>
+                  <div className={styles.characteristics}>
+                    <img src={engine} alt="" />
+                    <p>
+                      {car.EngineSize} / {car.Power} Л.С. / {car.FuelType}
+                    </p>
+                  </div>
+                  <div className={styles.characteristics}>
+                    <img src={transmission} alt="" />
+                    <p>КП - {car.Transmission}</p>
+                  </div>
+                </div>
               </div>
             </div>
-          </Container>
+
+            <div className={styles.car__img__block}>
+              <img src={car.photos.imgs[0].url} alt="" />
+            </div>
+          </div>
 
           <footer className={styles.footer}>
-            <div className={styles.footer__block}>
-              <div className={styles.footer__text_block}>
-                <div className={styles.footer__text_title}>
-                  Кредит на новый {car.brandName} {car.modelName}
-                </div>
-                <div className={styles.footer__text_description}>
+            <div className={styles.footer__promo}>
+              <div className={styles.footer__image_container}>
+                <img
+                  src={footerCar}
+                  alt="Chery Tiggo"
+                  className={styles.footer__car_image}
+                />
+              </div>
+              
+              <div className={styles.footer__credit_content}>
+                <h3 className={styles.footer__credit_title}>
+                  Кредит на новый Chery Tiggo
+                </h3>
+
+                <p className={styles.footer__credit_text}>
                   Оформите кредит на любой автомобиль ассортимента дилерского
                   центра «Максимум»
-                </div>
-                <button className={styles.footer__btn}>Оформить</button>
-              </div>
-              <div className={styles.footer__img_block}>
-                <img src={footerCar} alt="" />
+                </p>
+
+                <button className={styles.footer__credit_button}>
+                  Оформить
+                </button>
               </div>
             </div>
           </footer>
