@@ -61,15 +61,13 @@ export const CarPage = () => {
                 </div>
               </div>
 
-              <div className={styles.car__img__block}>
-                {/* <img src={car.photos.imgs[0].url} alt="" /> */}
+              <div className={styles.car__img__block}> 
                 <Carousel images={carImgs} />
               </div>
             </div>
           </Container>
 
-          <footer className={styles.footer}>
-            <Container containerType="body">
+          <footer className={styles.footer}> 
               <div className={styles.footer__promo}>
                 <div className={styles.footer__image_container}>
                   <img
@@ -93,8 +91,7 @@ export const CarPage = () => {
                     Оформить
                   </button>
                 </div>
-              </div>
-            </Container>
+              </div> 
           </footer>
         </>
       )}
