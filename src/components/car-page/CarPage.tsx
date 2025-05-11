@@ -9,6 +9,7 @@ import year from "./../../UI/images/year.svg";
 import engine from "./../../UI/images/engine.svg";
 import transmission from "./../../UI/images/transmission.svg";
 import label from "./../../UI/images/label.svg";
+import Carousel from "./Carousel";
 
 export const CarPage = () => {
   const carId = window.location.pathname.slice(5);
@@ -18,6 +19,7 @@ export const CarPage = () => {
 
   const { data, isLoading } = useGetCarListQuery(brand);
   const car = data?.find((car: CarDetails) => car.car_id === carId);
+  const carImgs = car?.photos.imgs.map((img: any) => img.url);
 
   return (
     <>
@@ -59,7 +61,8 @@ export const CarPage = () => {
             </div>
 
             <div className={styles.car__img__block}>
-              <img src={car.photos.imgs[0].url} alt="" />
+              {/* <img src={car.photos.imgs[0].url} alt="" /> */}
+              <Carousel images={carImgs} />
             </div>
           </div>
 
@@ -72,7 +75,7 @@ export const CarPage = () => {
                   className={styles.footer__car_image}
                 />
               </div>
-              
+
               <div className={styles.footer__credit_content}>
                 <h3 className={styles.footer__credit_title}>
                   Кредит на новый Chery Tiggo
