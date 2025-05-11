@@ -1,43 +1,45 @@
 .body {
-  padding: 100px 219px 0 219px;
+  max-width: 1482px;
+  margin: 0 auto;
+  padding: 0 50px;
 }
-
+/* 
 .header {
   padding: 20px 219px;
   background-color: #010c13;
-}
+} */
 
 @media (max-width: 1440px) {
-  .header {
+  /* .header {
     padding: 0 100px;
-  }
+  } */
 
-  .body {
+  /* .body {
     padding: 50px 100px;
-  }
+  } */
 }
 
 @media (max-width: 1024px) {
 }
 
 @media (max-width: 768px) {
-  .header {
+  /* .header {
     padding: 0 50px;
   }
 
   .body {
     padding: 25px 50px;
-  }
+  } */
 }
 
 @media (max-width: 425px) {
-  .header {
+  /* .header {
     padding: 12px 9px 12px 15px;
   }
 
   .body {
     padding: 30px 20px;
-  }
+  } */
 }
  
  

@@ -1,4 +1,7 @@
 .header {
+  background-color: #010c13;
+}
+.header__wrap {
   display: flex;
   align-items: center;
   width: 100%;
@@ -43,7 +46,6 @@
 }
 
 @media (max-width: 768px) {
-  
 }
 
 @media (max-width: 425px) {
