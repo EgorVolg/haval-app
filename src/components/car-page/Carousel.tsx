@@ -5,12 +5,14 @@ interface CarouselProps {
   images: string[];
   autoPlay?: boolean;
   interval?: number;
+  INDICATORS_COUNT: number;
 }
 
 const Carousel: React.FC<CarouselProps> = ({
   images,
   autoPlay = true,
   interval = 5000,
+  INDICATORS_COUNT = 4,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [startX, setStartX] = useState<number | null>(null);
@@ -34,11 +36,11 @@ const Carousel: React.FC<CarouselProps> = ({
   }, [currentIndex, autoPlay, interval, isDragging]);
 
   const goToNext = () => {
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev === INDICATORS_COUNT - 1 ? 0 : prev + 1));
   };
 
   const goToPrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? INDICATORS_COUNT - 1 : prev - 1));
   };
 
   const goToSlide = (index: number) => {
@@ -127,7 +129,7 @@ const Carousel: React.FC<CarouselProps> = ({
 
       {/* Индикаторы */}
       <div className="carousel-indicators">
-        {[...Array(3)].map((_, index) => (
+        {[...Array(INDICATORS_COUNT)].map((_, index) => (
           <button
             key={index}
             className={`carousel-indicator ${

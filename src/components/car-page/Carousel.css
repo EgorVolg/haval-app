@@ -4,7 +4,7 @@
   max-width: 800px;
   margin: 0 auto;
   overflow: hidden;
-  touch-action: pan-y;
+  touch-action: pan-y; 
 }
 
 .carousel-inner {
@@ -31,15 +31,15 @@
 .carousel-indicators {
   display: flex;
   flex-wrap: nowrap;
-  scroll-snap-type: mandatory;
-  width: 560px;
+  scroll-snap-type: mandatory; 
   justify-content: center;
+  margin-top: 40px;
 }
 
 .carousel-indicator {
   width: 140px;
   height: 4px;
-  background: white;
+  background: #f4f7f8;
 
   border: none;
   cursor: pointer;
