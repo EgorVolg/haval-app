@@ -1,0 +1,102 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.carousel_inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel_slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel_image {
+  width: 100%;
+  height: 719px;
+  object-fit: cover;
+  border-radius: 16px;
+
+  min-width: 200px;
+  display: block;
+  user-select: none;
+}
+
+.carousel_indicators {
+  display: flex;
+  flex-wrap: nowrap;
+  scroll-snap-type: mandatory;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.carousel_indicator {
+  width: 140px;
+  height: 4px;
+  background: #F4F7F8;
+
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s;
+}
+
+.active {
+  background: #010C13;
+}
+
+@media (max-width: 1440px) {
+  .carousel_image {
+    height: 550px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .carousel_image {
+    height: 400px;
+  }
+}
+
+/* Добавляем в конец файла Carousel.module.css */
+@media (max-width: 768px) {
+  .carousel {
+    max-width: 100%;
+    border-radius: 0;
+  }
+
+  .carousel_image {
+    height: 300px;
+    border-radius: 0;
+  }
+
+  .carousel_indicators {
+    margin-top: 20px;
+  }
+
+  .carousel_indicator {
+    width: 60px;
+    height: 3px;
+  }
+
+  /* Улучшаем touch-опыт */
+  .carousel_inner {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel_image {
+    height: 250px;
+  }
+
+  .carousel_indicator {
+    width: 40px;
+    margin: 0 3px;
+  }
+}

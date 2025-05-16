@@ -86,6 +86,16 @@
   }
 }
 
+@media (max-width: 425px) {
+  .car__title {
+    font-size: 14px;
+  }
+
+  .car__description {
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 320px) {
   .card {
     gap: 16px;

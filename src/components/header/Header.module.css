@@ -39,6 +39,31 @@
   color: #fff;
 }
 
+@media (min-width: 1920px) {
+  .header__wrap {
+    height: 250px;
+  }
+
+  .logo__container {
+    width: auto;
+    height: 200px;
+  }
+
+  .logo__img {
+    width: auto;
+    height: 130px;
+  }
+
+  .vertical_line {
+    height: 100px;
+    margin: 0 40px;
+  }
+
+  .logo__text {
+    font-size: 48px;
+  }
+}
+
 @media (max-width: 1440px) {
 }
 
@@ -55,12 +80,11 @@
 }
 
 @media (max-width: 320px) {
-  .header {
-    height: 54px;
+  .header {  
   }
 
   .logo__container {
-    width: 100%;
+    width: 100%; 
   }
 
   .logo__img {

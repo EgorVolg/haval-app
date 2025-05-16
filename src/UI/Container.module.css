@@ -1,34 +1,23 @@
-.body { 
+.container {
   margin: 0 auto;
   padding: 0 219px;
 }
-/* 
-.header {
-  padding: 20px 219px;
-  background-color: #010c13;
-} */
+
+ 
 
 @media (max-width: 1440px) {
-  /* .header {
+  .container {
     padding: 0 100px;
-  } */
-
-  /* .body {
-    padding: 50px 100px;
-  } */
+  }
 }
 
 @media (max-width: 1024px) {
 }
 
 @media (max-width: 768px) {
-  /* .header {
+  .container {
     padding: 0 50px;
   }
-
-  .body {
-    padding: 25px 50px;
-  } */
 }
 
 @media (max-width: 425px) {
@@ -40,5 +29,10 @@
     padding: 30px 20px;
   } */
 }
- 
- 
+
+@media (max-width: 320px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+}

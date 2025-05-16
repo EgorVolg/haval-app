@@ -7,7 +7,7 @@ import { Container } from "../../UI/Container";
 export const Header = () => {
   return (
     <div className={styles.header}>
-      <Container containerType="body">
+      <Container>
         <header className={styles.header__wrap}>
           <Link to="/" className={styles.logo__container}>
             <img src={logo} alt="logo" className={styles.logo__img} />

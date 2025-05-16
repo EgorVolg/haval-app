@@ -24,10 +24,10 @@ export const CarPage = () => {
   return (
     <>
       {isLoading ? (
-        <Container containerType="body">Loading...</Container>
+        <Container>Loading...</Container>
       ) : (
         <>
-          <Container containerType="body">
+          <Container>
             <div className={styles.main}>
               <div className={styles.description__block}>
                 <div className={styles.sale__block}>
@@ -60,38 +60,35 @@ export const CarPage = () => {
                   </div>
                 </div>
               </div>
-
-              <div className={styles.car__img__block}> 
-                <Carousel images={carImgs} />
-              </div>
+              <Carousel images={carImgs} />
             </div>
           </Container>
 
-          <footer className={styles.footer}> 
-              <div className={styles.footer__promo}>
-                <div className={styles.footer__image_container}>
-                  <img
-                    src={footerCar}
-                    alt="Chery Tiggo"
-                    className={styles.footer__car_image}
-                  />
-                </div>
+          <footer className={styles.footer}>
+            <div className={styles.footer__promo}>
+              <div className={styles.footer__image_container}>
+                <img
+                  src={footerCar}
+                  alt="Chery Tiggo"
+                  className={styles.footer__car_image}
+                />
+              </div>
 
-                <div className={styles.footer__credit_content}>
-                  <h3 className={styles.footer__credit_title}>
-                    Кредит на новый Chery Tiggo
-                  </h3>
+              <div className={styles.footer__credit_content}>
+                <h3 className={styles.footer__credit_title}>
+                  Кредит на новый Chery Tiggo
+                </h3>
 
-                  <p className={styles.footer__credit_text}>
-                    Оформите кредит на любой автомобиль ассортимента дилерского
-                    центра «Максимум»
-                  </p>
+                <p className={styles.footer__credit_text}>
+                  Оформите кредит на любой автомобиль ассортимента дилерского
+                  центра «Максимум»
+                </p>
 
-                  <button className={styles.footer__credit_button}>
-                    Оформить
-                  </button>
-                </div>
-              </div> 
+                <button className={styles.footer__credit_button}>
+                  Оформить
+                </button>
+              </div>
+            </div>
           </footer>
         </>
       )}

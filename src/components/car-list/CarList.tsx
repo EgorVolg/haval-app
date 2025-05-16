@@ -2,10 +2,8 @@ import React from "react";
 import styles from "./CarList.module.css";
 import { useGetCarListQuery } from "../../api/makeRequest";
 import { CarCard } from "../car-card/CarCard";
-import { useSelector } from "react-redux"; 
+import { useSelector } from "react-redux";
 import { CarDetails } from "../types/types";
-
-
 
 export const CarList = () => {
   const filterParams = useSelector(
@@ -33,6 +31,7 @@ export const CarList = () => {
 
   return (
     <div className={styles.list}>
+     {cars?.length === 0 && <div>Ничего не найдено</div>}
       {isLoading ? (
         <div>Loading...</div>
       ) : (
