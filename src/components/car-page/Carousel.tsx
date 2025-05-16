@@ -21,15 +21,14 @@ const Carousel: React.FC<CarouselProps> = ({
   const touchStartX = useRef<number | null>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
 
-  // Определяем мобильное устройство
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-    
+
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   // Автопрокрутка
@@ -59,7 +58,6 @@ const Carousel: React.FC<CarouselProps> = ({
     setCurrentIndex(index);
   };
 
-  // Обработчики для свайпа (оптимизированы для мобильных)
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
     setIsDragging(true);
@@ -71,7 +69,7 @@ const Carousel: React.FC<CarouselProps> = ({
     const touchX = e.touches[0].clientX;
     const diff = touchStartX.current - touchX;
 
-    if (Math.abs(diff) > 30) { // Более чувствительный свайп на мобильных
+    if (Math.abs(diff) > 30) {
       if (diff > 0) {
         goToNext();
       } else {
@@ -87,7 +85,7 @@ const Carousel: React.FC<CarouselProps> = ({
 
   // Для мыши
   const handleMouseDown = (e: React.MouseEvent) => {
-    if (isMobile) return; // Отключаем на мобильных
+    if (isMobile) return;
     setStartX(e.clientX);
     setIsDragging(true);
   };
@@ -112,7 +110,6 @@ const Carousel: React.FC<CarouselProps> = ({
     setIsDragging(false);
   };
 
-  // Рассчитываем активный индикатор для мобильных
   const getActiveIndicator = () => {
     if (images.length <= INDICATORS_COUNT) return currentIndex;
     return Math.floor((currentIndex / images.length) * INDICATORS_COUNT);
@@ -141,28 +138,31 @@ const Carousel: React.FC<CarouselProps> = ({
               alt={`Slide ${index + 1}`}
               className={styles.carousel_image}
               draggable="false"
-              loading="lazy" // Ленивая загрузка для мобильных
+              loading="lazy"
             />
           </div>
         ))}
       </div>
 
-      {/* Индикаторы */}
       <div className={styles.carousel_indicators}>
-        {[...Array(Math.min(INDICATORS_COUNT, images.length))].map((_, index) => (
-          <button
-            key={index}
-            className={`${styles.carousel_indicator} ${
-              index === getActiveIndicator() ? styles.active : ""
-            }`}
-            onClick={() => goToSlide(
-              images.length <= INDICATORS_COUNT 
-                ? index 
-                : Math.floor((index / INDICATORS_COUNT) * images.length)
-            )}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
+        {[...Array(Math.min(INDICATORS_COUNT, images.length))].map(
+          (_, index) => (
+            <button
+              key={index}
+              className={`${styles.carousel_indicator} ${
+                index === getActiveIndicator() ? styles.active : ""
+              }`}
+              onClick={() =>
+                goToSlide(
+                  images.length <= INDICATORS_COUNT
+                    ? index
+                    : Math.floor((index / INDICATORS_COUNT) * images.length)
+                )
+              }
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          )
+        )}
       </div>
     </div>
   );

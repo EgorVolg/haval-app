@@ -204,10 +204,18 @@
 @media (max-width: 1440px) {
   .main {
     height: auto;
+    margin-bottom: 60px;
   }
 
   .description__block {
     height: auto;
+  }
+
+  .footer__car_image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   .block__title {
@@ -231,6 +239,7 @@
   .main {
     flex-direction: column;
     gap: 50px;
+    margin-bottom: 30px;
   }
 
   .sale__block {
@@ -266,8 +275,6 @@
 
   .footer__credit_content {
     width: 300px;
-    top: 50px;
-    left: 50px;
   }
 
   .footer__car_image {
@@ -282,8 +289,11 @@
     padding-bottom: 0;
   }
 
-  .footer__car_image {
-    height: 50%;
+  .footer__credit_content {
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 20px;
   }
 
   .footer__credit_button {
@@ -299,9 +309,28 @@
 
   .characteristics img {
     width: 100%;
- 
   }
 }
 
 @media (max-width: 425px) {
+  .footer__promo {
+    min-height: 300px;
+  }
+
+  .footer__credit_content {
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 20px;
+  }
+
+  .footer__credit_title {
+    width: 100%;
+    font-size: 32px;
+  }
+
+  .footer__credit_text {
+    font-size: 20px;
+    height: auto;
+  }
 }

@@ -83,7 +83,7 @@ export const CarPage = () => {
                   Оформите кредит на любой автомобиль ассортимента дилерского
                   центра «Максимум»
                 </p>
-
+                
                 <button className={styles.footer__credit_button}>
                   Оформить
                 </button>
