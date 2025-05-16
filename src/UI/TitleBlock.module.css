@@ -3,7 +3,7 @@
   width: 678px;
   margin-top: 100px;
   margin-bottom: 60px;
-  text-wrap: nowrap;
+  text-wrap: wrap;
 }
 
 .title {
@@ -50,7 +50,6 @@
 @media (max-width: 1440px) {
   .title__block {
     margin-top: 60px;
-   
   }
 
   .title {
@@ -70,11 +69,10 @@
 }
 
 @media (max-width: 768px) {
-  .title__block { 
+  .title__block {
     margin-top: 40px;
     margin-bottom: 30px;
   }
-
 
   .title {
     font-size: 24px;
@@ -82,13 +80,12 @@
 }
 
 @media (max-width: 320px) {
-  .title__block { 
+  .title__block {
     margin-top: 20px;
     margin-bottom: 0px;
   }
 
   .title {
-    font-size: 20px;
-    height: 40px;
+    font-size: 20px; 
   }
 }

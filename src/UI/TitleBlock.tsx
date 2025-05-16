@@ -9,8 +9,13 @@ export const TitleBlock = ({ vin }: { vin?: string | number }) => {
   return (
     <Container>
       <div className={styles.title__block}>
-        <p className={styles.title}>Автомобили {car.brand} в СПб</p>
-        {vin && <div className={styles.vin}>vin {vin}</div>}
+        {!vin && <p className={styles.title}>Автомобили {car.brand} в СПб</p>}
+        {vin && (
+          <>
+            <p className={styles.title}>Автомобиль {car.brand}</p>{" "}
+            <div className={styles.vin}>vin {vin}</div>
+          </>
+        )}
       </div>
     </Container>
   );

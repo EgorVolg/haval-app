@@ -1,6 +1,7 @@
 .header {
   background-color: #010c13;
 }
+
 .header__wrap {
   display: flex;
   align-items: center;
@@ -64,43 +65,23 @@
   }
 }
 
-@media (max-width: 1440px) {
-}
-
-@media (max-width: 1024px) {
-}
-
-@media (max-width: 768px) {
-}
-
 @media (max-width: 425px) {
-}
-
-@media (max-width: 375px) {
+   .logo__text {
+    font-size: 14px;
+   }
+  
 }
 
 @media (max-width: 320px) {
-  .header {  
-  }
-
-  .logo__container {
-    width: 100%; 
-  }
-
-  .logo__img {
-    width: 154px;
-    height: 42px;
-  }
-
   .vertical_line {
     height: 25px;
   }
 
   .logo__text {
     text-wrap: wrap;
-    font-family: Tactic Sans;
+    font-family: "Tactic Sans";
     font-weight: 400;
-    font-size: clamp(10px, 4vw, 16px);
+    font-size: clamp(10px, 2vw, 16px);
     line-height: 150%;
     letter-spacing: 5%;
     vertical-align: middle;

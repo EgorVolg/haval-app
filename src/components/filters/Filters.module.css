@@ -54,7 +54,7 @@
   text-wrap: nowrap;
   font-family: "Tactic Sans";
   font-weight: 700;
-  font-size: clamp(12px, 3.2vw, 24px);
+  font-size: clamp(10px, 3.2vw, 24px);
   line-height: 120%;
   letter-spacing: 4%;
   text-align: center;
@@ -64,6 +64,14 @@
 @media (max-width: 1440px) {
   .filters__group_sidebar {
     min-width: 170px;
+  }
+
+  .filter__reset {
+
+    button {
+      text-wrap: wrap;
+      font-size: 20px;
+    }
   }
 }
 
@@ -86,11 +94,12 @@
 
   .filters__title {
     font-size: 14px;
+    text-wrap: wrap;
     padding-bottom: 10px;
   }
 
   .filter__buttons {
-    gap: 4px; 
+    gap: 4px;
   }
 
   .filter__reset {
