@@ -307,12 +307,27 @@
     margin-top: 20px;
   }
 
+  .guarantee {
+    align-items: center;
+    font-size: 20px;
+  }
+
+  .price {
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+
   .characteristics img {
     width: 100%;
   }
 }
 
 @media (max-width: 425px) {
+  .sale__block {
+    height: auto;
+    margin-bottom: 30px;
+  }
+
   .footer__promo {
     min-height: 300px;
   }

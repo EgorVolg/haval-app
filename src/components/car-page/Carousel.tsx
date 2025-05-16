@@ -14,6 +14,9 @@ const Carousel: React.FC<CarouselProps> = ({
   interval = 5000,
   INDICATORS_COUNT = 4,
 }) => {
+  // Ограничиваем количество изображений INDICATORS_COUNT
+  const displayedImages = images.slice(0, INDICATORS_COUNT);
+  
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [startX, setStartX] = useState<number | null>(null);
@@ -35,7 +38,7 @@ const Carousel: React.FC<CarouselProps> = ({
   useEffect(() => {
     let timer: NodeJS.Timeout;
 
-    if (autoPlay && !isDragging) {
+    if (autoPlay && !isDragging && displayedImages.length > 1) {
       timer = setTimeout(() => {
         goToNext();
       }, interval);
@@ -44,14 +47,14 @@ const Carousel: React.FC<CarouselProps> = ({
     return () => {
       if (timer) clearTimeout(timer);
     };
-  }, [currentIndex, autoPlay, interval, isDragging]);
+  }, [currentIndex, autoPlay, interval, isDragging, displayedImages.length]);
 
   const goToNext = () => {
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev === displayedImages.length - 1 ? 0 : prev + 1));
   };
 
   const goToPrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? displayedImages.length - 1 : prev - 1));
   };
 
   const goToSlide = (index: number) => {
@@ -110,11 +113,6 @@ const Carousel: React.FC<CarouselProps> = ({
     setIsDragging(false);
   };
 
-  const getActiveIndicator = () => {
-    if (images.length <= INDICATORS_COUNT) return currentIndex;
-    return Math.floor((currentIndex / images.length) * INDICATORS_COUNT);
-  };
-
   return (
     <div
       className={styles.carousel}
@@ -131,7 +129,7 @@ const Carousel: React.FC<CarouselProps> = ({
         className={styles.carousel_inner}
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
-        {images.map((img, index) => (
+        {displayedImages.map((img, index) => (
           <div key={index} className={styles.carousel_slide}>
             <img
               src={img}
@@ -144,26 +142,20 @@ const Carousel: React.FC<CarouselProps> = ({
         ))}
       </div>
 
-      <div className={styles.carousel_indicators}>
-        {[...Array(Math.min(INDICATORS_COUNT, images.length))].map(
-          (_, index) => (
+      {displayedImages.length > 1 && (
+        <div className={styles.carousel_indicators}>
+          {displayedImages.map((_, index) => (
             <button
               key={index}
               className={`${styles.carousel_indicator} ${
-                index === getActiveIndicator() ? styles.active : ""
+                index === currentIndex ? styles.active : ""
               }`}
-              onClick={() =>
-                goToSlide(
-                  images.length <= INDICATORS_COUNT
-                    ? index
-                    : Math.floor((index / INDICATORS_COUNT) * images.length)
-                )
-              }
+              onClick={() => goToSlide(index)}
               aria-label={`Go to slide ${index + 1}`}
             />
-          )
-        )}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
