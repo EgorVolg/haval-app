@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CarPage } from "./components/car-page/CarPage";
-import { HomePage } from "./components/home-page/HomePage"; 
+import { HomePage } from "./components/home-page/HomePage";
 import { Header } from "./components/header/Header";
 import { TitleBlock } from "./UI/TitleBlock";
 
@@ -9,7 +9,6 @@ function App() {
     <>
       <BrowserRouter>
         <Header />
-        <TitleBlock />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/car/:code" element={<CarPage />} />

@@ -10,6 +10,7 @@ import transmission from "./../../UI/images/transmission.svg";
 import label from "./../../UI/images/label.svg";
 import Carousel from "./Carousel";
 import { CarDetails } from "../types/types";
+import { TitleBlock } from "../../UI/TitleBlock";
 
 export const CarPage = () => {
   const carId = window.location.pathname.slice(5);
@@ -27,6 +28,7 @@ export const CarPage = () => {
         <Container>Loading...</Container>
       ) : (
         <>
+          <TitleBlock vin={car?.vin}/>
           <Container>
             <div className={styles.main}>
               <div className={styles.description__block}>
@@ -83,7 +85,7 @@ export const CarPage = () => {
                   Оформите кредит на любой автомобиль ассортимента дилерского
                   центра «Максимум»
                 </p>
-                
+
                 <button className={styles.footer__credit_button}>
                   Оформить
                 </button>
